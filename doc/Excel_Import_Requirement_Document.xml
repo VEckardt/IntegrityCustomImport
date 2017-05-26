@@ -1,0 +1,25 @@
+<mapping name="Excel Import Requirement Document" template-version="2.1">
+   <description>This is an Example of Importing an Excel Sheet.</description>
+   <field external="Project" internal="Project" on-create-only="false" direction="both" required="false"/>
+   <map-conditional property="prototype" default-map="CONTENT"/>
+   <map name="DOCUMENT">
+      <link-field external="Document ID" field-type="id"/>
+      <field external="Type" internal="Type" on-create-only="true" direction="both" field-type="type">
+         <default>Requirement Document</default>
+      </field>
+      <field external="Description" internal="Shared Text" on-create-only="false" direction="both" comparable="true" required="false"/>
+      <field external="Summary" internal="Document Short Title" on-create-only="false" direction="both" comparable="true" required="false"/>
+      <field internal="Shared Category" on-create-only="false" direction="both" required="false">
+         <default>Document</default>
+      </field>
+      <field external="Assigned User" internal="Assigned User" on-create-only="false" direction="both" comparable="true" required="true"/>
+   </map>
+   <map name="CONTENT">
+      <link-field external="External ID" internal="External ID" comparable="true" />
+      <field external="Additional Comments" internal="Additional Comments" on-create-only="false" direction="both" required="false"/>
+      <field external="Text" internal="Text" data-type="xhtml" field-type="richcontent" attachment="Text Attachments" on-create-only="false" direction="both" comparable="true" required="true"/>
+      <field external="Category" internal="Category" comparable="true" on-create-only="false" direction="both" required="true">
+         <default>System Requirement</default>
+      </field>
+   </map>
+</mapping>

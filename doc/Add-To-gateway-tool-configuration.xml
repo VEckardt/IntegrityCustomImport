@@ -1,0 +1,107 @@
+<parser-config>
+         <name>I1-Excel Import Requirement Document</name>
+         <description>Import XLS and XLSX files</description>
+         <parser class="com.ptc.services.gateway.importer.excel.ExcelParser" />
+         <extensions>
+            <extension>XLS</extension>
+            <extension>XLSX</extension>
+         </extensions>
+         <display-fields>
+            <display-field>DOCUMENT_TITLE</display-field>
+         </display-fields>
+         <config-fields>
+            <config-field>
+               <external-name>Project</external-name>
+               <display-name>Project</display-name>
+               <mandatory>true</mandatory>
+               <default-value>/EngineSWPlatform/A_Application</default-value>
+               <allowed-values>
+                  <value>/EngineSWPlatform/A_Application</value>
+                  <value>/EngineSWPlatform/AC_CAN</value>
+                  <value>/EngineSWPlatform/AD_Diagnostic</value>
+                  <value>/EngineSWPlatform/AE_EngineControl</value>
+                  <value>/EngineSWPlatform/AG_GearControl</value>
+                  <value>/EngineSWPlatform/AirDvP</value>
+               </allowed-values>
+            </config-field>
+         </config-fields>
+         <review-fields>
+            <review-field>Summary</review-field>
+            <review-field>Priority</review-field>
+            <review-field>Text</review-field>
+            <review-field>Category</review-field>
+         </review-fields>
+         <gateway-configuration-name>Excel Import Requirement Document</gateway-configuration-name>
+      </parser-config>
+      <parser-config>
+         <name>I2-Excel Import Test Document</name>
+         <description>Import XLS and XLSX files</description>
+         <parser class="com.ptc.services.gateway.importer.excel.ExcelParser" />
+         <extensions>
+            <extension>XLS</extension>
+            <extension>XLSX</extension>
+         </extensions>
+         <display-fields>
+            <display-field>DOCUMENT_TITLE</display-field>
+         </display-fields>
+         <config-fields>
+            <config-field>
+               <external-name>Project</external-name>
+               <display-name>Project</display-name>
+               <mandatory>true</mandatory>
+               <default-value>/EngineSWPlatform/A_Application</default-value>
+               <allowed-values>
+                  <value>/EngineSWPlatform/A_Application</value>
+                  <value>/EngineSWPlatform/AC_CAN</value>
+                  <value>/EngineSWPlatform/AD_Diagnostic</value>
+                  <value>/EngineSWPlatform/AE_EngineControl</value>
+                  <value>/EngineSWPlatform/AG_GearControl</value>
+                  <value>/EngineSWPlatform/AirDvP</value>
+               </allowed-values>
+            </config-field>
+         </config-fields>
+         <review-fields>
+            <review-field>Summary</review-field>
+            <review-field>Priority</review-field>
+            <review-field>Text</review-field>
+            <review-field>Expected Results</review-field>
+            <review-field>Category</review-field>
+         </review-fields>
+         <gateway-configuration-name>Excel Import Test Suite</gateway-configuration-name>
+      </parser-config>
+      <parser-config>
+         <name>I3-Excel Import Specification Document</name>
+         <description>Import XLS and XLSX files</description>
+         <parser class="com.ptc.services.gateway.importer.excel.ExcelParser" />
+         <extensions>
+            <extension>XLS</extension>
+            <extension>XLSX</extension>
+         </extensions>
+         <display-fields>
+            <display-field>DOCUMENT_TITLE</display-field>
+         </display-fields>
+         <config-fields>
+            <config-field>
+               <external-name>Project</external-name>
+               <display-name>Project</display-name>
+               <mandatory>true</mandatory>
+               <default-value>/EngineSWPlatform/A_Application</default-value>
+               <allowed-values>
+                  <value>/EngineSWPlatform/A_Application</value>
+                  <value>/EngineSWPlatform/AC_CAN</value>
+                  <value>/EngineSWPlatform/AD_Diagnostic</value>
+                  <value>/EngineSWPlatform/AE_EngineControl</value>
+                  <value>/EngineSWPlatform/AG_GearControl</value>
+                  <value>/EngineSWPlatform/AirDvP</value>
+               </allowed-values>
+            </config-field>
+         </config-fields>
+         <review-fields>
+            <review-field>Summary</review-field>
+            <review-field>Priority</review-field>
+            <review-field>Text</review-field>
+            <review-field>Expected Results</review-field>
+            <review-field>Category</review-field>
+         </review-fields>
+         <gateway-configuration-name>Excel Import Specification Document</gateway-configuration-name>
+      </parser-config>

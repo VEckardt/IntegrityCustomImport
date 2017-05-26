@@ -1,0 +1,4 @@
+
+lax.class.path=<KEEP WHAT YOU HAVE ALREADY>;..\\lib\\IntegrityCustomImport.jar;..\\lib\\IntegrityAPI.jar;..\\lib\\xmlbeans-2.6.0.jar;..\\lib\\poi-ooxml-schemas-3.11-20141221.jar;..\\lib\\poi-ooxml-3.11-20141221.jar;..\\lib\\poi-3.11-20141221.jar;..\\lib\\dom4j-1.6.1.jar
+
+
