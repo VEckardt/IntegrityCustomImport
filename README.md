@@ -10,6 +10,10 @@ Integrity Gateway extension to create complete Integrity Documents from Excel fi
 ## Installation
 must be installed locally, because the Integrity Gateway is a local application
 
+## Hint
+- It's possible to set the Document ID, then the loader will update an existing document in Integrity
+- But: be very careful, because the tool was not intended to offer this feature (even if it works like that)!
+
 ## Important
 - Please try it out in a test environment first, NEVER go directly with this into production 
 - This is NOT intended for a permanent use of Excel together with Integrity
