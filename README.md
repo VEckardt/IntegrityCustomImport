@@ -4,6 +4,9 @@ Integrity Gateway extension to create complete Integrity Documents from Excel fi
 ## Use Cases
 - Date migration from other Requirement tools via Excel into Integrity LM
 
+## Possible Import Layout
+![CustomImport](doc/ExcelImport.PNG)
+
 ## Installation
 must be installed locally, because the Integrity Gateway is a local application
 
