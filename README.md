@@ -11,7 +11,7 @@ This tool provides a Java loader for Excel, linked into the Integrity Gateway
 ## Hints
 - It's possible to set the Document ID, then the loader will update an existing document in Integrity
 - But: be very careful, because the tool was not intended to offer this feature (even if it works like that)!
-- The column External ID is required. This is a referenz allowing the loader to connect Excel Data with Integrity Data. Internally the External ID can be mapped to a different field if needed
+- The column External ID is required. This is a reference column, allowing the loader to connect Excel Data rows with Integrity Data rows. Internally the External ID can be mapped to a different field if needed.
 
 ## Important
 - Please try it out in a test environment first, NEVER go directly with this into production 
