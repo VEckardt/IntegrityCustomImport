@@ -12,6 +12,12 @@ Integrity Gateway extension to create complete Integrity Lifecycle Manager Docum
 - This is NOT intended for a permanent use of Excel together with Integrity
 - Use the Standard Excel Integration instead (Integrity Add On, available from the PTC Software Download Page) 
 
+## Tested with
+- Integrity LM 10.6
+- Integrity LM 10.8
+- Integrity LM 10.9
+- Integrity LM 11.0
+
 ## Hints
 - It's possible to set the Document ID, then the loader will update an existing document in Integrity
 - But: be very careful, because the tool was not intended to offer this feature (even if it works like that)!
