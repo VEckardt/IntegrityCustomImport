@@ -27,3 +27,8 @@ Integrity Gateway extension to create complete Integrity Lifecycle Manager Docum
 ## Documentation & Installation
 - Must be installed locally, because the Integrity Gateway is a local application
 - For detailed instructions, please review the provided documentation "doc/Technical_Documentation_Migrate_Documents_with_Excel.docx"
+
+## Related Solutions
+- IntegrityCustomGateway - for easier Gateway handling: https://github.com/VEckardt/IntegrityCustomGateway
+- IntegrityExcelTestSession - for Offline Test Sessions (local version): https://github.com/VEckardt/IntegrityExcelTestSession
+- Integrity Test Session - for Offline Test Sessions (web version): https://github.com/VEckardt/IntegrityTestSession
