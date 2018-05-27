@@ -31,6 +31,19 @@ Integrity Gateway extension to create complete Integrity Lifecycle Manager Docum
 - XML mapping files can be copied on client or server
 - Addition to the gateway-tool-config.xml is on client or server
 
+File List:
+```
+bin/gateway.lax (addition only)
+config/gateway/gateway-tool-configuration.xml  (addition only)
+config/gateway/mappings/Excel_Import_Requirement_Document.xml (new)
+config/gateway/mappings/Excel_Import_Test_Suite.xml (new)
+lib/IntegrityAPI.jar (new)
+lib/poi-3.11-20141221.jar (new)
+lib/poi-ooxml-3.11-20141221.jar
+lib/poi-ooxml-schemas-3.11-20141221.jar
+lib/mksapi.jar (!! use the existing !!)
+```
+
 ## Documentation
 - For detailed instructions, please review the provided documentation "doc/Technical_Documentation_Migrate_Documents_with_Excel.docx"
 
