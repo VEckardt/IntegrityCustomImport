@@ -27,16 +27,16 @@ Integrity Gateway extension to create complete Integrity Lifecycle Manager Docum
 
 ## Installation
 - Jar files must be installed locally, because the Integrity Gateway is a local application. This can be inside your Integrity client directory, but also outside if you don't have needed write access
-- Addition to the Gateway.lax is on client, pointing to the libs above. This operation my require write access to your Integrity client directory. Gateway.lax is located in your Integrity client folder /bin.
+- Addition to the Gateway.lax is on client, pointing to the new libs above. This operation requires write access to your Integrity client directory. Gateway.lax is located in your Integrity client folder /bin.
 - XML mapping files can be copied on client or server
 - Addition to the gateway-tool-config.xml is on client or server
 
 File List:
 ```
 bin/gateway.lax (addition only)
-config/gateway/gateway-tool-configuration.xml  (addition only)
-config/gateway/mappings/Excel_Import_Requirement_Document.xml (new)
-config/gateway/mappings/Excel_Import_Test_Suite.xml (new)
+config/gateway/gateway-tool-configuration.xml  (addition only, can be placed on server)
+config/gateway/mappings/Excel_Import_Requirement_Document.xml (new, can be placed on server)
+config/gateway/mappings/Excel_Import_Test_Suite.xml (new, can be placed on server)
 lib/IntegrityAPI.jar (new)
 lib/poi-3.11-20141221.jar (new)
 lib/poi-ooxml-3.11-20141221.jar
