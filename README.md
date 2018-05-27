@@ -30,6 +30,7 @@ Integrity Gateway extension to create complete Integrity Lifecycle Manager Docum
 - Addition to the Gateway.lax is on client, pointing to the new libs above. This operation requires write access to your Integrity client directory. Gateway.lax is located in your Integrity client folder /bin.
 - XML mapping files can be copied on client or server
 - Addition to the gateway-tool-config.xml is on client or server
+- I am using the POI libraries for Excel handling. You can also use newer versions for sure.
 
 File List:
 ```
