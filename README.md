@@ -23,6 +23,7 @@ Integrity Gateway extension to create complete Integrity Lifecycle Manager Docum
 - But: be very careful, because the tool was not intended to offer this feature (even if it works like that)!
 - The column "External ID" is required. This is a reference column, allowing the loader to connect Excel Data rows with Integrity Data rows. Internally the "External ID" can be mapped to a different field if needed.
 - The column "Section" is required and has to have a value. The loader determines by counting the dots in the section field into which level the row has to be placed. It doesn't matter if the section number has any meaning (no need for gapless etc.)
+- If you want to gain from automated formatting of the headings, then the Category column must be placed before the Text column (this feature is under review)
 
 ## Installation
 - Jar files must be installed locally, because the Integrity Gateway is a local application. This can be inside your Integrity client directory, but also outside if you don't have needed write access
