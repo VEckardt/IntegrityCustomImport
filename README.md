@@ -54,5 +54,6 @@ lib/mksapi.jar (!! use the existing in your installation !!)
 ## Related Solutions
 - IntegrityCustomGateway - for easier Gateway handling: https://github.com/VEckardt/IntegrityCustomGateway
 - IntegrityExcelTestSession - for Offline Test Sessions (local version): https://github.com/VEckardt/IntegrityExcelTestSession
-- Integrity Test Session - for Offline Test Sessions (web version): https://github.com/VEckardt/IntegrityTestSession
+- IntegrityTestSession - for Offline Test Sessions (web version): https://github.com/VEckardt/IntegrityTestSession
 - IntegrityFormatHeaders - for easy formatting of Headings: https://github.com/VEckardt/IntegrityFormatHeaders
+- IntegrityCustomExport - Enhanced Gateway Exporter for Excel: https://github.com/VEckardt/IntegrityCustomExport
