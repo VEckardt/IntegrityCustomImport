@@ -37,11 +37,12 @@ bin/gateway.lax (addition only)
 config/gateway/gateway-tool-configuration.xml  (addition only, can be placed on server)
 config/gateway/mappings/Excel_Import_Requirement_Document.xml (new, can be placed on server)
 config/gateway/mappings/Excel_Import_Test_Suite.xml (new, can be placed on server)
+lib/IntegrityCustomImport.jar
 lib/IntegrityAPI.jar (new)
 lib/poi-3.11-20141221.jar (new)
 lib/poi-ooxml-3.11-20141221.jar
 lib/poi-ooxml-schemas-3.11-20141221.jar
-lib/mksapi.jar (!! use the existing !!)
+lib/mksapi.jar (!! use the existing in your installation !!)
 ```
 
 ## Documentation
