@@ -37,3 +37,4 @@ Integrity Gateway extension to create complete Integrity Lifecycle Manager Docum
 - IntegrityCustomGateway - for easier Gateway handling: https://github.com/VEckardt/IntegrityCustomGateway
 - IntegrityExcelTestSession - for Offline Test Sessions (local version): https://github.com/VEckardt/IntegrityExcelTestSession
 - Integrity Test Session - for Offline Test Sessions (web version): https://github.com/VEckardt/IntegrityTestSession
+- IntegrityFormatHeaders - for easy formatting of Headings in Documents: https://github.com/VEckardt/IntegrityFormatHeaders
