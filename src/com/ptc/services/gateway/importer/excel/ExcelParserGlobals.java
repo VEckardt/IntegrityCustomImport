@@ -18,9 +18,11 @@ import com.mks.gateway.mapper.ItemMapperException;
 import com.mks.gateway.mapper.ItemMapperSession;
 import com.mks.gateway.mapper.UnsupportedPrototypeException;
 import com.mks.gateway.mapper.config.ItemMapperConfig;
-import static com.ptc.services.common.gateway.LogAndDebug.log;
-import com.ptc.services.common.gateway.MappingConfig;
+import static com.ptc.services.gateway.importer.LogAndDebug.log;
+import com.ptc.services.gateway.importer.MappingConfig;
+import java.io.File;
 import static java.lang.System.exit;
+import static java.lang.System.setProperty;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -289,11 +291,11 @@ public class ExcelParserGlobals extends GatewayTransformer {
     public static ExternalItem buildContentItem(ItemMapperConfig mappingConfig, Content content, String relFieldName, String linkContentField) throws UnsupportedPrototypeException, ItemMapperException, APIException {
         HashMap<String, String> fields = content.getFieldValuesMap();
         String lcf = fields.get(linkContentField);
-//        if (lcf.contentEquals("Ext_ID_6")) {
-//            lcf = "20761";
-//        }
+        ExternalItem item = new ExternalItem(content.isDocument() ? "DOCUMENT" : "CONTENT", lcf);;
 
-        ExternalItem item = new ExternalItem("CONTENT", lcf);
+        if (content.isDocument()) {
+            item.setInternalId(content.getFieldValue("ID").substring(content.getFieldValue("ID").indexOf("-") + 1));
+        }
 
         // Add Default values defined in the XML Mapping file
         for (ItemMapperConfig.Field fieldConfig : mappingConfig.getIncomingFields()) {
@@ -308,19 +310,19 @@ public class ExcelParserGlobals extends GatewayTransformer {
         for (String field : fields.keySet()) {
             if (MappingConfig.containsExternalField(mappingConfig, field)) {
 
+                // log("INFO: Field Type for " + field + " is: " + MappingConfig.getExternalFieldType(mappingConfig, field), 1);
                 if (MappingConfig.getExternalFieldType(mappingConfig, field).contentEquals("richcontent")) {
                     // item.add(field, fields.get(field));
 
                     String richcontent = fields.get(field);
                     // not here!
-                    richcontent = richcontent.replace("<", "&lt;").replace(">", "&gt;");
+                    // richcontent = richcontent.replace("<", "&lt;").replace(">", "&gt;");
 
                     // replace the charage returns
 //                    if (richcontent.contains("" + (char) (10))) {
 //                        // log("Char 10 found, len=" + text.length(), 2);
 //                        richcontent = richcontent.replace("" + (char) (10), "<br>");
 //                    }
-
                     ItemField itemField = new com.mks.gateway.data.ItemField.RichContent(field, "<!-- MKS HTML -->" + richcontent);
                     item.getItemData().addField(itemField);
 
@@ -370,6 +372,18 @@ public class ExcelParserGlobals extends GatewayTransformer {
             }
         }
         return item;
+    }
+
+    public static boolean setCurrentDirectory(String directory_name) {
+        boolean dirResult = false;  // Boolean indicating whether directory was set
+        File directory;       // Desired current working directory
+
+        directory = new File(directory_name).getAbsoluteFile();
+        if (directory.exists() || directory.mkdirs()) {
+            dirResult = (setProperty("user.dir", directory.getAbsolutePath()) != null);
+        }
+
+        return dirResult;
     }
 
     /**

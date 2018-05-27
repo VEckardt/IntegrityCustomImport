@@ -2,7 +2,7 @@ package com.ptc.services.gateway.importer.excel;
 
 import com.mks.gateway.mapper.ItemMapperException;
 import com.mks.gateway.mapper.config.ItemMapperConfig;
-import com.ptc.services.common.gateway.MappingConfig;
+import com.ptc.services.gateway.importer.MappingConfig;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -21,7 +21,7 @@ public class Content {
     /**
      * The mapping of Header Value to Content Value
      */
-    private HashMap<String, String> fieldValuesMap = new HashMap<String, String>();
+    private HashMap<String, String> fieldValuesMap = new HashMap<>();
     /**
      * If position is specified the String representing the position
      */
@@ -35,11 +35,11 @@ public class Content {
     /**
      * Any Child contents.
      */
-    private List<Content> relationships = new ArrayList<Content>();
+    private List<Content> relationships = new ArrayList<>();
 
     public String getExternalID(ItemMapperConfig mappingConfig) throws ItemMapperException {
         for (String key : fieldValuesMap.keySet()) {
-            if (key.contentEquals("External ID") || MappingConfig.getInternalFieldName (mappingConfig, key).contentEquals("External ID")) {
+            if (key.contentEquals("External ID") || MappingConfig.getInternalFieldName(mappingConfig, key).contentEquals("External ID")) {
                 return fieldValuesMap.get(key);
             }
         }
@@ -70,9 +70,15 @@ public class Content {
      * @param rowNum
      */
     public Content(HashMap<String, String> fieldValuesMap, int rowNum) {
-        this.position = null;
-        this.fieldValuesMap = fieldValuesMap;
-        this.rowNum = rowNum;
+        this(null, fieldValuesMap, rowNum);
+    }
+
+    public String getFieldValue(String fieldName) {
+        return fieldValuesMap.get(fieldName);
+    }
+
+    public Boolean isDocument() {
+        return fieldValuesMap.get("Category").equals("Document") || fieldValuesMap.get("Category").equals("Suite");
     }
 
     /**
@@ -93,7 +99,7 @@ public class Content {
      * @return an unmodifiable set of the children.
      */
     public final Set<Content> getUniqueChildren() {
-        return Collections.unmodifiableSet(new HashSet<Content>(children));
+        return Collections.unmodifiableSet(new HashSet<>(children));
     }
 
     /**
@@ -213,6 +219,7 @@ public class Content {
      *
      * @return
      */
+    @Override
     public String toString() {
         return position + "[" + children + "]";
     }
@@ -242,6 +249,7 @@ public class Content {
      * @param obj the Object to check for equality
      * @return
      */
+    @Override
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;

@@ -12,10 +12,10 @@ import com.mks.gateway.mapper.ItemMapperException;
 import com.mks.gateway.mapper.UnsupportedPrototypeException;
 import com.mks.gateway.mapper.config.ItemMapperConfig;
 import com.mks.gateway.tool.exception.GatewayException;
-import com.ptc.services.common.gateway.LogAndDebug;
-import static com.ptc.services.common.gateway.LogAndDebug.log;
-import com.ptc.services.common.gateway.MappingConfig;
-import static com.ptc.services.common.gateway.MappingConfig.listMappingConfig;
+import com.ptc.services.gateway.importer.LogAndDebug;
+import static com.ptc.services.gateway.importer.LogAndDebug.log;
+import com.ptc.services.gateway.importer.MappingConfig;
+import static com.ptc.services.gateway.importer.MappingConfig.listMappingConfig;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -23,7 +23,6 @@ import java.io.InputStream;
 import static java.lang.System.exit;
 import static java.lang.System.getProperty;
 import static java.lang.System.out;
-import static java.lang.System.setProperty;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -57,23 +56,11 @@ public class ExcelParser extends ExcelParserGlobals {
     static String buildRelationship = "";
     static String headerRowNum = "";
 
-    public static boolean setCurrentDirectory(String directory_name) {
-        boolean dirResult = false;  // Boolean indicating whether directory was set
-        File directory;       // Desired current working directory
-
-        directory = new File(directory_name).getAbsoluteFile();
-        if (directory.exists() || directory.mkdirs()) {
-            dirResult = (setProperty("user.dir", directory.getAbsolutePath()) != null);
-        }
-
-        return dirResult;
-    }
-
     @Override
     public List transformToItems(File sourceFile, Map<String, String> defaultItemFields) throws GatewayException {
 
         log("* ********************************************************************* *", 1);
-        log("* Enhanced Excel Import via Gateway, (c) 2016 PTC Inc.", 1);
+        log("* Enhanced Excel Import via Gateway, (c) 2017 PTC Inc.", 1);
         log("* ********************************************************************* *", 1);
         log("* Class Name:              " + this.getClass().getName(), 1);
         log("* Default Locale:          " + Locale.getDefault(), 1);
@@ -152,7 +139,7 @@ public class ExcelParser extends ExcelParserGlobals {
             }
             gatewayItems = createIIFList(mappingConfig, contents, sourceFile.getName(), defaultItemFields);
             LogAndDebug wed = new LogAndDebug(true);
-            wed.writeIIFtoDisk(gatewayItems, 10);
+            wed.writeIIFtoDisk(gatewayItems, "ExcelParser", "final");
 
         } catch (UnsupportedPrototypeException ex) {
             Logger.getLogger(ExcelParser.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
@@ -172,6 +159,7 @@ public class ExcelParser extends ExcelParserGlobals {
 
     /**
      * Returns all Rows from the Excel Sheet
+     *
      * @param sheet
      * @return
      */
@@ -338,8 +326,7 @@ public class ExcelParser extends ExcelParserGlobals {
                             // Put the Text into the Map if some text is there
                             if (text.trim().length() > 0 || !ignoreBlanks) { // If the text isn't blank OR if blanks don't matter 
 
-                                text = text.replace("<", "&lt;").replace(">", "&gt;");
-
+                                // text = text.replace("<", "&lt;").replace(">", "&gt;");
                                 // replace the charage returns
                                 if (text.contains("" + (char) (10))) {
                                     // log("Char 10 found, len=" + text.length(), 2);
@@ -358,10 +345,11 @@ public class ExcelParser extends ExcelParserGlobals {
                                 }
                             }
 
+                            // log("! " + headingsMap.get(columnId).getFieldName() + ", " + fieldValuesMap.get("Category"), 1);
                             // com.mks.gateway.App.main(new String[]{"import"});
                             // if the field name is Text and Category is Heading, then set the Heading format
                             // VE: Deactivated: 2016/11/26                            
-                            if ((!(getConfigParam("setHeadingFormat") + "").contentEquals("false")) && headingsMap.get(columnId).getFieldName().contentEquals("Text")) {
+                            if (!((getConfigParam("setHeadingFormat") + "").contentEquals("false")) && headingsMap.get(columnId).getFieldName().contentEquals("Text")) {
                                 String category = fieldValuesMap.get("Category");
                                 // log("category: " + category, 2);
                                 // String section = fieldValuesMap.get("Section");
@@ -560,7 +548,7 @@ public class ExcelParser extends ExcelParserGlobals {
                     || validColumns.isEmpty()
                     || cellContents.equals(positionColumnName)) {
                 // This accommodates if the Header column has an empty value
-                cellContents = cellContents.isEmpty()?"EMPTY_HEADER_" + (i + 1):cellContents;
+                cellContents = cellContents.isEmpty() ? "EMPTY_HEADER_" + (i + 1) : cellContents;
                 debug("Mapping Header " + i + " to " + cellContents);
                 headingsMap.put(i, new Field(cellContents, "", MappingConfig.getExternalFieldType(docMappingConfig, cellContents)));
             }
