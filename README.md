@@ -25,6 +25,7 @@ Integrity Gateway extension to create complete Integrity Lifecycle Manager Docum
 - The column "Section" is required and has to have a value. The loader determines by counting the dots in the section field into which level the row has to be placed. It doesn't matter if the section number has any meaning (no need for gapless etc.)
 - If you want to gain from automated formatting of the headings, then the Category column must be placed before the Text column (this feature is under review)
 - If you upload into rich text fields, like into the Text, then declare this field accordingly in the mapping file. Otherwise the text may display html tags.
+- To add additional fields, add them at first into the mapping XML, and then you can use the external field name defined also in your Excel template. 
 
 ## Installation
 - Jar files must be installed locally, because the Integrity Gateway is a local application. This can be inside your Integrity client directory, but also outside if you don't have needed write access
@@ -53,5 +54,6 @@ lib/mksapi.jar (!! use the existing in your installation !!)
 ## Related Solutions
 - IntegrityCustomGateway - for easier Gateway handling: https://github.com/VEckardt/IntegrityCustomGateway
 - IntegrityExcelTestSession - for Offline Test Sessions (local version): https://github.com/VEckardt/IntegrityExcelTestSession
-- Integrity Test Session - for Offline Test Sessions (web version): https://github.com/VEckardt/IntegrityTestSession
+- IntegrityTestSession - for Offline Test Sessions (web version): https://github.com/VEckardt/IntegrityTestSession
 - IntegrityFormatHeaders - for easy formatting of Headings: https://github.com/VEckardt/IntegrityFormatHeaders
+- IntegrityCustomExport - Enhanced Gateway Exporter for Excel: https://github.com/VEckardt/IntegrityCustomExport
