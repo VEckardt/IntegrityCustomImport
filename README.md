@@ -24,8 +24,13 @@ Integrity Gateway extension to create complete Integrity Lifecycle Manager Docum
 - The column "External ID" is required. This is a reference column, allowing the loader to connect Excel Data rows with Integrity Data rows. Internally the "External ID" can be mapped to a different field if needed.
 - The column "Section" is required and has to have a value. The loader determines by counting the dots in the section field into which level the row has to be placed. It doesn't matter if the section number has any meaning (no need for gapless etc.)
 
-## Documentation & Installation
-- Must be installed locally, because the Integrity Gateway is a local application
+## Installation
+- Jar files must be installed locally, because the Integrity Gateway is a local application. This can be inside your Integrity client directory, but also outside if you don't have needed write access
+- Addition to the Gateway.lax is on client, pointing to the libs above. This operation my require write access to your Integrity client directory. Gateway.lax is located in your Integrity client folder /bin.
+- XML mapping files can be copied on client or server
+- Addition to the gateway-tool-config.xml is on client or server
+
+## Documentation
 - For detailed instructions, please review the provided documentation "doc/Technical_Documentation_Migrate_Documents_with_Excel.docx"
 
 ## Related Solutions
