@@ -33,13 +33,13 @@ Integrity Gateway extension to create complete Integrity Lifecycle Manager Docum
 - Addition to the gateway-tool-config.xml is on client or server
 - I am using the POI libraries for Excel handling. You can also use newer versions for sure.
 
-File List:
+File List (target):
 ```
 bin/gateway.lax (addition only)
 config/gateway/gateway-tool-configuration.xml  (addition only, can be placed on server)
 config/gateway/mappings/Excel_Import_Requirement_Document.xml (new, can be placed on server)
 config/gateway/mappings/Excel_Import_Test_Suite.xml (new, can be placed on server)
-lib/IntegrityCustomImport.jar (new)
+lib/IntegrityCustomImport.jar (new, from dist folder)
 lib/IntegrityAPI.jar (new)
 lib/poi-3.11-20141221.jar (new)
 lib/poi-ooxml-3.11-20141221.jar (new)
