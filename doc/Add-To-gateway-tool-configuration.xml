@@ -3,7 +3,6 @@
          <description>Import XLS and XLSX files</description>
          <parser class="com.ptc.services.gateway.importer.excel.ExcelParser" />
          <extensions>
-            <extension>XLS</extension>
             <extension>XLSX</extension>
          </extensions>
          <display-fields>
@@ -38,7 +37,6 @@
          <description>Import XLS and XLSX files</description>
          <parser class="com.ptc.services.gateway.importer.excel.ExcelParser" />
          <extensions>
-            <extension>XLS</extension>
             <extension>XLSX</extension>
          </extensions>
          <display-fields>
@@ -74,7 +72,6 @@
          <description>Import XLS and XLSX files</description>
          <parser class="com.ptc.services.gateway.importer.excel.ExcelParser" />
          <extensions>
-            <extension>XLS</extension>
             <extension>XLSX</extension>
          </extensions>
          <display-fields>

@@ -1,4 +1,4 @@
-<mapping name="Excel Import Test Suite" template-version="2.1">
+<mapping name="Excel Import Test Document" template-version="2.1">
    <description>This is an Example of Importing an Excel Sheet.</description>
    <field external="Project" internal="Project" on-create-only="false" direction="both" required="false"/>
    <map-conditional property="prototype" default-map="CONTENT"/>
