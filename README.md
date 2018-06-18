@@ -42,6 +42,8 @@ config/gateway/mappings/Excel_Import_Requirement_Document.xml (new, can be place
 config/gateway/mappings/Excel_Import_Test_Suite.xml (new, can be placed on server)
 lib/IntegrityCustomImport.jar (new, from dist folder)
 lib/IntegrityAPI.jar (new)
+lib/dom4j-1.6.1.jar (new)
+lib/xmlbeans-2.6.0.jar (new)
 lib/poi-3.11-20141221.jar (new)
 lib/poi-ooxml-3.11-20141221.jar (new)
 lib/poi-ooxml-schemas-3.11-20141221.jar (new)
