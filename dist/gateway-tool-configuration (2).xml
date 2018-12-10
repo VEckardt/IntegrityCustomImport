@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configurations version="1.4">
+	
+	<export-configs>
+		<export-config>
+			<name>Product Matrix (Excel)</name>
+			<description>An exporter using a script to save the input IIF file to the specified output file. The associated attachments are also saved in the same directory as the output file, under the directory name outfileName_attachments.</description>
+			<exporter class="com.ptc.services.gateway.exporter.excel.ExcelExport">
+				<property name="template">../config/gateway/export/Microsoft Excel/Template_Releaseplan.xlsx</property>
+				<property name="crosstabfield">Product</property>
+				<property name="crosstabibplfield">Summary</property>
+				<property name="type">Release Matrix</property>
+			</exporter>
+			<extension>xlsx</extension>
+			<display-fields>
+				<display-field>DOCUMENT_TITLE</display-field>
+			</display-fields>
+			<gateway-configuration-name>Excel_Release_Matrix</gateway-configuration-name>
+			<!-- filter-query-definition>(field["Category"]=Heading)</filter-query-definition -->
+		</export-config>
+
+
+	</export-configs>
+</configurations>
